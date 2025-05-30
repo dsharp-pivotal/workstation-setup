@@ -23,13 +23,9 @@ echo
 echo "Ensuring your Homebrew directory is writable..."
 sudo chown -Rf $(whoami) $(brew --prefix)/*
 
-echo
-echo "Installing Homebrew services..."
-brew tap homebrew/services
-
-echo
-echo "Adding Pivotal tap to Homebrew"
-brew tap pivotal/tap
+#echo
+#echo "Installing Homebrew services..."
+#brew tap homebrew/services
 
 echo "Cleaning up your Homebrew installation..."
 brew cleanup

@@ -7,8 +7,10 @@ echo "Installing applications"
 
 # Utilities
 
-brew install --cask flycut
+#brew install --cask flycut
 brew install --cask rectangle
+brew install --cask menumeters
+brew install --cask 1password 1password-cli
 
 # Terminals
 brew install --cask iterm2
@@ -16,7 +18,7 @@ brew install --cask iterm2
 # Browsers
 
 brew install --cask google-chrome
-brew install --cask firefox
+#brew install --cask firefox
 
 # Communication
 brew install --cask slack

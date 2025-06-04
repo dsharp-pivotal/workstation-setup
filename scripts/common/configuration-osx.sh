@@ -53,3 +53,11 @@ open /Applications/Rectangle.app
 
 #echo "Configuring FlyCut"
 #open /Applications/Flycut.app
+
+echo "Setting 1Password as SSH identity agent"
+if ! grep -qF "IdentityAgent" ~/.ssh/config ; then
+  cat <<EOF >~/.ssh/config
+Host *
+  IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+EOF
+fi

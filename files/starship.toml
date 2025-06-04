@@ -1,0 +1,16 @@
+#format = '''$all${env_var.FLOX_PROMPT_ENVIRONMENTS}$line_break$directory$line_break$character'''
+format = '''$all$line_break$directory$line_break$character'''
+
+[directory]
+truncation_length = 0
+truncate_to_repo = false
+
+[golang]
+symbol = " "
+
+[kubernetes]
+disabled = false
+format = '[$symbol$context( \($namespace\))]($style) '
+
+#[env_var.FLOX_PROMPT_ENVIRONMENTS]
+#format = '[flox](bold 99) [\[$env_value\]](141) '

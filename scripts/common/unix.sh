@@ -9,6 +9,7 @@ echo "Installing utilities for unix development"
 brew install coreutils # GNU core utilities
 brew install watch # watch things
 brew install direnv # unclutter your .profile
+brew install fzf
 
 # For users of unixes
 #brew install pstree

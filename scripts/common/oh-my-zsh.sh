@@ -19,4 +19,9 @@ ZSH_DISABLE_COMPFIX=true
 # Enable zsh-z, which is included in omz.
 sed -i '' 's/^plugins=(git)$/plugins=(git z)/' ~/.zshrc
 
+# Make ^W treat "--flags" and "_" as words.
+if ! grep -q '^WORDCHARS=' ~/.zshrc ; then
+    echo 'WORDCHARS="-_"' >> ~/.zshrc
+fi
+
 set -e

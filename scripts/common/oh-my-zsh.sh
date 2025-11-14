@@ -16,4 +16,7 @@ ZSH_DISABLE_COMPFIX=true
 
 " >> ~/.zshenv
 
+# Enable zsh-z, which is included in omz.
+sed -i '' 's/^plugins=(git)$/plugins=(git z)/' ~/.zshrc
+
 set -e

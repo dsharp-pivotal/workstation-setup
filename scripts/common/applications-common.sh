@@ -9,7 +9,7 @@ echo "Installing applications"
 
 #brew install --cask flycut
 brew install --cask rectangle
-brew install --cask menumeters
+brew install --cask stats # replacement for MenuMeters
 brew install --cask 1password 1password-cli
 
 # Terminals

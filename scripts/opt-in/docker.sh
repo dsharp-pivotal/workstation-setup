@@ -2,13 +2,17 @@
 set +e
 
 # Docker
-brew install --cask docker
-echo "To get docker command-line tools, run the docker application"
+brew install docker docker-buildx colima
 
-# Docker Zsh Completion
-# Reference https://docs.docker.com/docker-for-mac/
-etc=/Applications/Docker.app/Contents/Resources/etc
-ln -s $etc/docker.zsh-completion "$(brew --prefix)/share/zsh/site-functions/_docker"
-ln -s $etc/docker-compose.zsh-completion "$(brew --prefix)/share/zsh/site-functions/_docker-composepopd"
+# Ensure the buildx plugin from brew works
+yq -i -o=json \
+    '.cliPluginsExtraDirs += ["/opt/homebrew/lib/docker/cli-plugins"] | .cliPluginsExtraDirs |= unique' \
+    ~/.docker/config.json
+
+# Append "docker" to omz plugins list for completions
+if !grep -q "plugins=(.*docker.*)" ~/.zshrc; then
+    sed -i 's/plugins=(\([^)]*\))/plugins=(\1 docker)/' ~/.zshrc
+    echo "Docker plugin added to ~/.zshrc"
+fi
 
 set -e
